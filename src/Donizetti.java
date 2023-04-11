@@ -51,6 +51,7 @@ public class Donizetti
 		System.out.println("7 - Es n. 7 - Uguali consecutivi");
 	}
 
+	// Accordino: quasi giusto: 1.8 pt
 	public static void MinimodiArray()
 	{
 		int [] Numeri = new int [10];
@@ -73,6 +74,7 @@ public class Donizetti
 			Indice = 0;
 		}
 
+		// Accordino: questa parte è superflua, bastava far cominciare il ciclo da 1 anziché da 2
 		else if (Numeri[0] > Numeri[1])
 		{
 			Minimo=Numeri[1];
@@ -90,9 +92,12 @@ public class Donizetti
 		}
 
 		System.out.println(Indice);
+		// Accordino: dovevi stampare anche il valore, peccato!
 	}
 
-
+	// Accordino: il programma funziona ma i confronti sono tutti sbagliati e i 3
+	// tentativi soon stati fatti non con il ciclo ma con degli if concatenati
+	// 1 pt
 	public static void ParoleMisteriose()
 	{
 		String [] Array = {"ciao", "cheneso", "faniente", "mistero", "non"};
@@ -110,7 +115,7 @@ public class Donizetti
 				System.out.println("Hai indovinato!");
 				break;
 			}
-			else if(A!=Array[i])
+			else if(A!=Array[i]) //Accordino: Gli array non si confrontano così!!!
 			{
 				System.out.println("Riprovare, inserire altra parola");
 				Tentativo+=1;
@@ -144,6 +149,8 @@ public class Donizetti
 
 	}
 
+	// Accordino: potevi fare l'array dei pari più piccolo
+	// ma funziona correttamente: 2 pt
 	public static void StampaPari()
 	{
 		int [] Numeri = new int [20];
@@ -186,6 +193,7 @@ public class Donizetti
 		}
 	}
 
+	// Accordino: ci sei quasi arrivata 2pt
 	public static void ArrayDivisori()
 	{
 		int [] Numeri = new int [50];
@@ -205,8 +213,8 @@ public class Donizetti
 				{
 					Quantita+=1;
 				}
-				NonhoFantasia[Indice] = Quantita;
-				Indice +=1;
+				NonhoFantasia[Indice] = Quantita; //Accordino: questo andava dentro l'if con i-2 al posto di "Indice" 
+				Indice +=1; // Accordino: così non dovevi neanche incrementare questo indice
 
 			}
 		}
@@ -217,6 +225,7 @@ public class Donizetti
 		}
 	}
 
+	// Accordino: piccolo difetto nell'ordinamento: 2pt
 	public static void LancioRisiko()
 	{
 		int [] Attaccante = new int [3];
@@ -250,7 +259,7 @@ public class Donizetti
 
 		for(int i=0; i<Attaccante.length; i++)
 		{
-			for(int j=1; j<Attaccante.length; j++)
+			for(int j=0; j<Attaccante.length; j++)
 			{
 				if(Attaccante[i]<Attaccante[j])
 				{
@@ -263,7 +272,7 @@ public class Donizetti
 
 		for(int i=0; i<Difensore.length; i++)
 		{
-			for(int j=1; j<Difensore.length; j++)
+			for(int j=0; j<Difensore.length; j++)
 			{
 				if(Difensore[i]<Difensore[j])
 				{
@@ -273,7 +282,7 @@ public class Donizetti
 				}
 			}
 		}
-		System.out.println("Stampa arrays ordinati");
+		System.out.println("\nStampa arrays ordinati");
 
 		for (int i=0; i<Attaccante.length; i++)
 		{
@@ -303,7 +312,7 @@ public class Donizetti
 			}
 		}
 
-		System.out.println("Punteggio attaccante:" + CAAtt);
+		System.out.println("\nPunteggio attaccante:" + CAAtt);
 		System.out.println("Punteggio difensore:" + CADif);
 
 		if(CAAtt > CADif)
